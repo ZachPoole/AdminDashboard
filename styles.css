@@ -1,0 +1,47 @@
+@import "reset.css";
+
+:root {
+  --primary-normal: #3a68e7;
+  --primary-light: #ecf3f8;
+  --accent: #6ac690;
+  --secondary-light: #ecf3f8;
+  --shadow-color: lightgray;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+#main-container {
+  grid-template-rows: 1fr 5fr;
+  grid-template-columns: 1fr 6fr;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar content";
+}
+
+.grid,
+.subgrid {
+  display: grid;
+  height: 100%;
+}
+
+#header {
+  z-index: 1;
+  grid-area: header;
+  background-color: white;
+  box-shadow: 0px 0px 10px 0px var(--shadow-color);
+}
+
+#sidebar {
+  z-index: 2;
+  grid-area: sidebar;
+  background-color: var(--primary-normal);
+}
+
+#content {
+  grid-area: content;
+  background-color: var(--primary-light);
+}
